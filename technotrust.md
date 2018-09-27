@@ -129,4 +129,68 @@ responses %>% group_by(., `8. In March 2018, a woman was hit and killed by a sel
     ## 6 Multiple of above options. Government should regulate, company sh…     1
     ## 7 Restrict automation to only certain contexts                           1
 
+``` r
+#Group by technology used and response to facebook question
+
+responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`2. Select the category that you most use your phone for. You may select more than one.`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+```
+
+    ## # A tibble: 20 x 4
+    ## # Groups:   1. Select the technology that you have used the most from the
+    ## #   list below, 2. Select the category that you most use your phone for.
+    ## #   You may select more than one., Who do you believe should be most
+    ## #   responsible for the spread of biased or incorrect content on
+    ## #   Facebook's news feed? [20]
+    ##    `1. Select the tec… `2. Select the category… `Who do you believe…     n
+    ##    <chr>               <chr>                    <chr>                <int>
+    ##  1 Haven't used any o… Social media (Facebook,… Government - Lack o…     2
+    ##  2 Bitcoins or other … Messaging apps (Whatsap… Government - Lack o…     1
+    ##  3 Bitcoins or other … Social media (Facebook,… Engineers that buil…     1
+    ##  4 Bitcoins or other … Social media (Facebook,… Facebook CEO             1
+    ##  5 Haven't used any o… Daily Planner, Messagin… Users themselves         1
+    ##  6 Haven't used any o… Daily Planner, Navigati… Facebook CEO             1
+    ##  7 Haven't used any o… Social media (Facebook,… Users themselves         1
+    ##  8 Haven't used any o… Social media (Facebook,… Engineers that buil…     1
+    ##  9 Haven't used any o… Social media (Facebook,… No opinion               1
+    ## 10 Home virtual assit… Social media (Facebook,… Engineers that buil…     1
+    ## 11 Home virtual assit… Social media (Facebook,… All of the above         1
+    ## 12 Home virtual assit… Social media (Facebook,… Users themselves         1
+    ## 13 Home virtual assit… Social media (Facebook,… No opinion               1
+    ## 14 VR (Oculus rift)    Navigation               Government - Lack o…     1
+    ## 15 VR (Oculus rift)    Social media (Facebook,… No opinion               1
+    ## 16 VR (Oculus rift)    Social media (Facebook,… The company's miss …     1
+    ## 17 Wearables (fitbit,… Daily Planner, Messagin… Policies that gover…     1
+    ## 18 Wearables (fitbit,… Messaging apps (Whatsap… Engineers that buil…     1
+    ## 19 Wearables (fitbit,… Social media (Facebook,… Engineers that buil…     1
+    ## 20 Wearables (fitbit,… Social media (Facebook,… Government - Lack o…     1
+
+``` r
+responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+```
+
+    ## # A tibble: 18 x 3
+    ## # Groups:   1. Select the technology that you have used the most from the
+    ## #   list below, Who do you believe should be most responsible for the
+    ## #   spread of biased or incorrect content on Facebook's news feed? [18]
+    ##    `1. Select the technology t… `Who do you believe should be most …     n
+    ##    <chr>                        <chr>                                <int>
+    ##  1 Haven't used any of the abo… Government - Lack of regulations         2
+    ##  2 Haven't used any of the abo… Users themselves                         2
+    ##  3 Wearables (fitbit, Apple wa… Engineers that build the algorithm       2
+    ##  4 Bitcoins or other crypto cu… Engineers that build the algorithm       1
+    ##  5 Bitcoins or other crypto cu… Facebook CEO                             1
+    ##  6 Bitcoins or other crypto cu… Government - Lack of regulations         1
+    ##  7 Haven't used any of the abo… Engineers that build the algorithm       1
+    ##  8 Haven't used any of the abo… Facebook CEO                             1
+    ##  9 Haven't used any of the abo… No opinion                               1
+    ## 10 Home virtual assitants (Goo… All of the above                         1
+    ## 11 Home virtual assitants (Goo… Engineers that build the algorithm       1
+    ## 12 Home virtual assitants (Goo… No opinion                               1
+    ## 13 Home virtual assitants (Goo… Users themselves                         1
+    ## 14 VR (Oculus rift)             Government - Lack of regulations         1
+    ## 15 VR (Oculus rift)             No opinion                               1
+    ## 16 VR (Oculus rift)             The company's miss as well as users…     1
+    ## 17 Wearables (fitbit, Apple wa… Government - Lack of regulations         1
+    ## 18 Wearables (fitbit, Apple wa… Policies that govern  platforms lik…     1
+
 ## Count Likert responses

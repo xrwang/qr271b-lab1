@@ -37,6 +37,19 @@ responses %>% group_by(., `8. In March 2018, a woman was hit and killed by a sel
 
 ```
 
+
+
+```{r}
+#Group by technology used and response to facebook question
+
+responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`2. Select the category that you most use your phone for. You may select more than one.`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+
+
+
+responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+
+```
+
 ## Count Likert responses
 
 ```{r}
