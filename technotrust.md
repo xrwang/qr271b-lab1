@@ -129,6 +129,8 @@ responses %>% group_by(., `8. In March 2018, a woman was hit and killed by a sel
     ## 6 Multiple of above options. Government should regulate, company sh…     1
     ## 7 Restrict automation to only certain contexts                           1
 
+## Technology use and implications for trust / delegation?
+
 ``` r
 #Group by technology used and response to facebook question
 
@@ -165,6 +167,7 @@ responses %>% group_by(., `1. Select the technology that you have used the most 
     ## 20 Wearables (fitbit,… Social media (Facebook,… Government - Lack o…     1
 
 ``` r
+#group by question 1 and facebook q
 responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
 ```
 
