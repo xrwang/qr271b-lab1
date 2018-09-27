@@ -1,0 +1,6 @@
+"0","#write_csv(responses, 'TechnoTrustResponses.csv')"
+"0","#Nominal Categorical Questions: columns/qs"
+"0","#1 2 3 8 "
+"0","#Question 1"
+"0","responses %>% group_by(., `1. Select the technology that you have used the most from the list below`) %>% "
+"0","  count(sort = TRUE)"

@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1538087818079.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FA18D90D",
+    "lastKnownWriteTime" : 1538088877,
+    "last_content_update" : 1538088877742,
+    "path" : "~/Projects/qr/technotrust.Rmd",
+    "project_path" : "technotrust.Rmd",
+    "properties" : {
+        "cursorPosition" : "33,0",
+        "last_setup_crc32" : "381C540E804473ec",
+        "scrollLine" : "30",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

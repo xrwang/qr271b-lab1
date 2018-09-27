@@ -1,0 +1,44 @@
+---
+title: "technotrust"
+author: "xiaowei"
+date: "9/27/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyverse)
+
+```
+
+```{r}
+responses <- readxl::read_xls('Techno trust (Responses).xls')
+responses
+#write_csv(responses, 'TechnoTrustResponses.csv')
+
+#Nominal Categorical Questions: columns/qs
+#1 2 3 8 
+
+#Question 1
+responses %>% group_by(., `1. Select the technology that you have used the most from the list below`) %>% 
+  count(sort = TRUE)
+
+
+#Question 2
+responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`) %>% count(sort = TRUE)
+
+
+#Question 3
+responses %>% group_by(., `Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+
+#Question 8
+responses %>% group_by(., `8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
+
+```
+
+## Count Likert responses
+
+```{r}
+
+```
