@@ -2,7 +2,7 @@
 title: "technotrust"
 author: "xiaowei"
 date: "9/27/2018"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
