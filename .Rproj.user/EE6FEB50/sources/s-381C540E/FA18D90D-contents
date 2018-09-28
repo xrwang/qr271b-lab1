@@ -81,3 +81,22 @@ datatable(techuse3_sd)
 
 ```
 
+### Both
+
+```{r}
+techuse_sdfb <- responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`, `Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`,`8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
+datatable(techuse_sdfb)
+
+
+techuse_sdfbq1 <- responses %>% group_by(., `1. Select the technology that you have used the most from the list below`, `Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`,`8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
+datatable(techuse_sdfbq1)
+```
+
+```{r}
+
+responses$`9. Which emerging technology has been the most useful to you`
+responses[5,]
+```
+```{r}
+responses$`10. Would you trust emerging technologies (Robo advisors, chatbots, self driving cars) enough to include them in your personal life, and why?`
+```
