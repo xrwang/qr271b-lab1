@@ -1,2 +1,0 @@
-"0","#Question 8"
-"0","responses %>% group_by(., `8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)"

@@ -1,57 +1,83 @@
 ---
 title: "technotrust"
-author: "xiaowei"
+author: "group 10"
 date: "9/27/2018"
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(tidyverse)
+library(DT)
 
 ```
 
 ```{r}
 responses <- readxl::read_xls('Techno trust (Responses).xls')
-responses
 #write_csv(responses, 'TechnoTrustResponses.csv')
 
+datatable(responses)
+```
+
+```{r}
 #Nominal Categorical Questions: columns/qs
 #1 2 3 8 
 
 #Question 1
-responses %>% group_by(., `1. Select the technology that you have used the most from the list below`) %>% 
+q1 <- responses %>% group_by(., `1. Select the technology that you have used the most from the list below`) %>% 
   count(sort = TRUE)
-
+datatable(q1)
 
 #Question 2
-responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`) %>% count(sort = TRUE)
-
+q2 <- responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`) %>% count(sort = TRUE)
+datatable(q2)
 
 #Question 3
-responses %>% group_by(., `Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+q3 <- responses %>% group_by(., `Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+datatable(q3)
 
 #Question 8
-responses %>% group_by(., `8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
+q8<-responses %>% group_by(., `8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
 
+datatable(q8)
 ```
 
 ## Technology use and implications for trust / delegation?
 
+### Facebook
 ```{r}
 #Group by technology used and response to facebook question
 
-responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`2. Select the category that you most use your phone for. You may select more than one.`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
-
+techuse_fb <- responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`2. Select the category that you most use your phone for. You may select more than one.`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+datatable(techuse_fb)
 
 #group by question 1 and facebook q
-responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+techuse2_fb <- responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+datatable(techuse2_fb)
+
+
+techuse3_fb <- responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)
+datatable(techuse3_fb)
 
 ```
-
-## Count Likert responses
-
+###Self driving cars
 ```{r}
 
+#Group by technology used and response to self-driving car question
+
+techuse_sd <- responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`2. Select the category that you most use your phone for. You may select more than one.`, `8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
+datatable(techuse_sd)
+
+#group by question 1 and facebook q
+techuse2_sd <- responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
+datatable(techuse2_sd)
+
+
+techuse3_sd <- responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`,`8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)
+datatable(techuse3_sd)
+
+
+
 ```
+

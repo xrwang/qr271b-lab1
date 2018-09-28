@@ -1,2 +1,0 @@
-"0","#Question 3"
-"0","responses %>% group_by(., `Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)"

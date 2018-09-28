@@ -1,2 +1,0 @@
-"0","#Question 2"
-"0","responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`) %>% count(sort = TRUE)"

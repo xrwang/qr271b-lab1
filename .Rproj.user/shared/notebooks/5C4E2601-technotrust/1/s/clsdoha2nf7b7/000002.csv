@@ -1,0 +1,3 @@
+"0","responses <- readxl::read_xls('Techno trust (Responses).xls')"
+"0","#write_csv(responses, 'TechnoTrustResponses.csv')"
+"0","responses"

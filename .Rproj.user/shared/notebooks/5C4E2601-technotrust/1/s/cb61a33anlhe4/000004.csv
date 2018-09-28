@@ -1,0 +1,3 @@
+"0","#group by question 1 and facebook q"
+"0","techuse2_sd <- responses %>% group_by(., `1. Select the technology that you have used the most from the list below`,`8. In March 2018, a woman was hit and killed by a self driving car. What do you view as the most appropriate next step?`) %>% count(sort = TRUE)"
+"0","datatable(techuse2_sd)"

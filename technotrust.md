@@ -4,46 +4,62 @@ xiaowei
 9/27/2018
 
 ``` r
-responses <- readxl::read_xls('Techno trust (Responses).xls')
-responses
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
 ```
 
-    ## # A tibble: 21 x 12
-    ##    Timestamp           Score `1. Select the tec… `2. Select the category …
-    ##    <dttm>              <dbl> <chr>               <chr>                    
-    ##  1 2018-09-21 16:38:33    0. VR (Oculus rift)    Social media (Facebook, …
-    ##  2 2018-09-21 16:42:07    0. Bitcoins or other … Social media (Facebook, …
-    ##  3 2018-09-21 16:47:41    0. Haven't used any o… Social media (Facebook, …
-    ##  4 2018-09-21 18:14:06    0. Bitcoins or other … Social media (Facebook, …
-    ##  5 2018-09-21 19:22:41    0. Home virtual assit… Social media (Facebook, …
-    ##  6 2018-09-21 20:05:38    0. Haven't used any o… Social media (Facebook, …
-    ##  7 2018-09-21 20:37:09    0. VR (Oculus rift)    Navigation               
-    ##  8 2018-09-22 09:12:56    0. Haven't used any o… Daily Planner, Navigation
-    ##  9 2018-09-22 11:07:11    0. Wearables (fitbit,… Social media (Facebook, …
-    ## 10 2018-09-22 11:45:46    0. VR (Oculus rift)    Social media (Facebook, …
-    ## # ... with 11 more rows, and 8 more variables: `Who do you believe should
-    ## #   be most responsible for the spread of biased or incorrect content on
-    ## #   Facebook's news feed?` <chr>, `4. Please indicate how much you agree
-    ## #   or disagree with the statement: I am comfortable with the use of
-    ## #   emerging technologies (Chatbots, RoboAdvisors or VR etc.)` <chr>, `5.
-    ## #   Please indicate how much you agree or disagree with the statement:
-    ## #   Chatbots are likely to be more efficient than human beings in
-    ## #   responding to customer service complaints` <chr>, `6. Please indicate
-    ## #   how much you agree or disagree with the statement: I am likely to
-    ## #   consider an investment opportunity recommended by an algorithm` <chr>,
-    ## #   `7. Please indicate how much you agree or disagree with the statement:
-    ## #   I am afraid that emerging technologies (Chatbots, self driving cars,
-    ## #   Robo Advisors) are going to replace the need for humans in places of
-    ## #   employment` <chr>, `8. In March 2018, a woman was hit and killed by a
-    ## #   self driving car. What do you view as the most appropriate next
-    ## #   step?` <chr>, `9. Which emerging technology has been the most useful
-    ## #   to you` <chr>, `10. Would you trust emerging technologies (Robo
-    ## #   advisors, chatbots, self driving cars) enough to include them in your
-    ## #   personal life, and why?` <chr>
+    ## Warning: package 'dplyr' was built under R version 3.4.4
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
 
 ``` r
+library(tidyverse)
+```
+
+    ## ── Attaching packages ────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+
+    ## ✔ ggplot2 3.0.0.9000     ✔ readr   1.1.1     
+    ## ✔ tibble  1.4.2          ✔ purrr   0.2.5     
+    ## ✔ tidyr   0.8.1          ✔ stringr 1.3.1     
+    ## ✔ ggplot2 3.0.0.9000     ✔ forcats 0.2.0
+
+    ## Warning: package 'tibble' was built under R version 3.4.3
+
+    ## Warning: package 'tidyr' was built under R version 3.4.4
+
+    ## Warning: package 'purrr' was built under R version 3.4.4
+
+    ## Warning: package 'stringr' was built under R version 3.4.4
+
+    ## ── Conflicts ───────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
+library(DT)
+```
+
+    ## Warning: package 'DT' was built under R version 3.4.3
+
+``` r
+responses <- readxl::read_xls('Techno trust (Responses).xls')
 #write_csv(responses, 'TechnoTrustResponses.csv')
 
+datatable(responses)
+```
+
+![](technotrust_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
+``` r
 #Nominal Categorical Questions: columns/qs
 #1 2 3 8 
 

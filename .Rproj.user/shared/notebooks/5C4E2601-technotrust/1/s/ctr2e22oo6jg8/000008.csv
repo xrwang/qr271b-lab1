@@ -1,0 +1,2 @@
+"0","techuse3_fb <- responses %>% group_by(., `2. Select the category that you most use your phone for. You may select more than one.`,`Who do you believe should be most responsible for the spread of biased or incorrect content on Facebook's news feed?`) %>% count(sort = TRUE)"
+"0","datatable(techuse3_fb)"
