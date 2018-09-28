@@ -61,7 +61,7 @@ techuse3_fb <- responses %>% group_by(., `2. Select the category that you most u
 datatable(techuse3_fb)
 
 ```
-###Self driving cars
+### Self driving cars
 ```{r}
 
 #Group by technology used and response to self-driving car question
