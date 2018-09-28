@@ -17,7 +17,7 @@ library(DT)
 responses <- readxl::read_xls('Techno trust (Responses).xls')
 #write_csv(responses, 'TechnoTrustResponses.csv')
 
-datatable(responses)
+#datatable(responses)
 ```
 
 ```{r}
